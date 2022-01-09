@@ -27,20 +27,20 @@ if (!isset($instrument)) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instrument</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="cake">
-    <div class="info">
-        <h2><?= $instrument['title'] ?></h2>
-        <p><?= $instrument['description'] ?></p>
-        <p>Стоимость: <?= $instrument['price']?></p>
-        <p>В наличии: <?= $instrument['count']?></p>
-    </div>
-    <div class="img">
-        <img src="/images/<?= $instrument['image'] ?>" alt="">
-    </div>
-    <div class="buy">
-        <a href="#">Заказать</a>
+<section class="itemPageMain">
+    <div class="pageCard">
+        <div class="pageImg">
+            <img src="/images/<?= $instrument['image'] ?>" alt="">
+        </div>
+        <div>
+            <h2><?= $instrument['title'] ?></h2>
+            <p><?= $instrument['description'] ?></p>
+            <p>Стоимость: <?= $instrument['price']?></p>
+            <p>В наличии: <?= $instrument['count']?></p>
+        </div>
     </div>
 </section>
 </body>
