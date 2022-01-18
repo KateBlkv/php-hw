@@ -128,10 +128,7 @@ document.forms.auth.addEventListener('submit', function (event){
         .then(text => {
             const content = document.getElementById("popup_content");
             if (text === true) {
-                content.innerText =`
-                <div class="answer"> 
-                    <span>Авторизация прошла успешно!</span>
-                </div>`;
+                content.innerText =`Авторизация прошла успешно!`;
             } else {
                 content.innerText =`У нас зарегистрирован один пользователь, и это не вы =(`;
             }
