@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/9cf9a6173e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/hw3.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="button">
+    <a href="#popup">Личный кабинет</a>
+</div>
+<div class="popup" id="popup">
+    <div class="popup_body">
+        <div class="popup_content">
+            <a href="" class="popup_close">X</a>
+            <div class="popup_title">Войдите</div>
+            <div class="popup_content" id="popup_content">
+                <form action="#" method="post" name="auth">
+                    <div class="login-input">
+
+                        <!-- <label for="login">Введите логин</label> -->
+                        <input id="login" type="text"  required name="login" minlength="3" maxlength="7">
+                        <span class="placeholder"><i class="far fa-user"></i> Логин </span>
+                        <span class="message paddingL" id="msg1"></span>
+
+                    </div>
+                    <div class="password-input">
+
+                        <!-- <label for="password">Введите пароль</label> -->
+                        <input id="password" type="password" required minlength="3" maxlength="8" name="password">
+                        <span class="placeholder"><i class="fas fa-key"></i> Пароль </span>
+                        <span class="message paddingL" id="msg2"></span>
+                    </div>
+                    <div class="remember">
+
+                        <input id="remember" type="checkbox" name="remember" checked value="remember">
+                        <label class="remember-label" for="remember">Запомнить</label>
+                    </div>
+
+                    <input class="into" type="submit" value="Войти">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/hw3.js"></script>
+</body>
+</html>
