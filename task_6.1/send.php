@@ -9,7 +9,7 @@
 // Вывести информацию о том, какой файл загружен, а какой нет и указать причину в случае ошибки.
 // Код лучше разбить на отдельные функции.
 $files = $_FILES;
-var_dump($files['picture']['error']);
+//var_dump($files['picture']['error']);
 // ограничение размера файла
 $limit_size = 1048576; // 1 Mb
 // корректные форматы файлов
@@ -18,8 +18,8 @@ $valid_format = array("image/jpeg", "image/jpg", "image/gif", "image/png");
 $error_array = array();
 // имя нового файла
 $rand_name = md5(time() . mt_rand(0, 9999));
-var_dump($files);
-echo $files['picture']['type'][0];
+//var_dump($files);
+//echo $files['picture']['type'][0];
 $errors=[];
 foreach ($files['picture']['error'] as $item){
     //var_dump($item);
