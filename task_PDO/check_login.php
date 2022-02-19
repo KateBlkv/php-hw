@@ -8,21 +8,11 @@ function joinfunc(){
     }else{
         echo false;
     }*/
+    /*var_dump($post);*/
     $userLogin=$post['login'];
     $password=$post['pwd'];
-    $alphabet = 'EeTtAaOoIiNnSsHhRrDdLlCcUuMmWwFfGgYyPpBbVvKkXxJjQqZz';
 
-    if (strpos($userLogin, '@')) {
-        $a = 'email';
-    }elseif (strlen($userLogin) == 10 && strpbrk($userLogin, $alphabet) == false){
-        $a = 'phone';
-    } else {
-        $a = 'login';
-    }
-
-    $b = $post[$a];
-
-    if (check_registeration($a, $b, $password)) {
+    if (check_registeration($userLogin, $password)) {
         echo json_encode(true);
     }else{
         echo json_encode(false);
@@ -30,12 +20,13 @@ function joinfunc(){
 
 }
 
-function check_registeration($a,$b,$c){
-    require_once 'DbConection.php';
-    $connection = DbConection::getInstance()->getConnection();
-    $sql = "SELECT login FROM tb_users WHERE $a = ? pwd = ?;";
-    $statement = $this->connection->prepare($sql);
-    $statement->execute([$b, $c]);
+function check_registeration($a,$b){
+    require_once 'DBConnection.php';
+    $connection = DbConnection::getInstance()->getConnection();
+    $sql = "SELECT login FROM tb_users WHERE login = ? AND pwd = ?;";
+    $statement = $connection->prepare($sql);
+
+    $statement->execute([$a, $b]);
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 

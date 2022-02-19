@@ -3,11 +3,13 @@
 document.forms.signin.addEventListener('submit',
     function (event){
         event.preventDefault();
-        let login = this.elements['login'].value.trim();
-        let psw = this.elements['psw'].value.trim();
+        const data = new FormData()
+        data.set('login', this.elements['login'].value.trim());
+        data.set('pwd', this.elements['psw'].value.trim());
+
         fetch('check_login.php', {
             method: 'post',
-            body: new FormData(this)
+            body: data
             })
             .then(response => response.json())
             .then(text =>{
