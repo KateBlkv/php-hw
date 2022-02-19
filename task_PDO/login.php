@@ -1,4 +1,10 @@
 <?php
+$method = $_SERVER['REQUEST_METHOD']; // get/post
+$uri = explode('?', $_SERVER['REQUEST_URI'])[0]; // /registration
+if ($method === 'GET' && $uri === '/login.php'){
+    $get = $_GET;
+    $message = $get['message'] ?? ' ';
+}else $message ='';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,7 +17,7 @@
 </head>
 <body>
 <h2>Войти</h2>
-<div id = "answer"></div>
+<div id = "answer"><?= $message ?></div>
 <form method="post" name="signin" >
     <label for="login">Введите логин/телефон/почту:</label>
     <input type="text" id="login" name="login">
