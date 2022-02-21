@@ -1,0 +1,6 @@
+.item {
+    border: 2px solid darkgrey;
+    background-color: grey;
+    border-radius: 10px;
+    color: blueviolet;
+}

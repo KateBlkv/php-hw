@@ -17,7 +17,7 @@ function get_registered(){
 
     $statement = $connection->prepare($sql);
     $statement->execute($params);
-    return $message = "Вы успешно зарегистрировались!";
+    echo "Вы успешно зарегистрировались!";
 }
 
 function if_registered(){
@@ -36,8 +36,10 @@ function if_registered(){
 
 if (!if_registered()) {
     get_registered();
+    header('Location: /login.php');
 } else {
-    header('Location: /login.php?message=Пользователь с такими данными уже существует');
+    echo 'Пользователь с такими данными уже существует';
+    header('Location: /login.php');
 }
 
 ?>

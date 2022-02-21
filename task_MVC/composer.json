@@ -1,0 +1,19 @@
+{
+    "name": "web/project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Katya",
+            "email": "kt@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Climbers\\" : "src/"
+        }
+    },
+  "require": {
+    "ext-pdo": "*"
+  }
+}
