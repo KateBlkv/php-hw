@@ -1,3 +1,108 @@
 body {
-    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: dodgerblue;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+nav a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.delete-cake-section {
+    padding: 20px;
+}
+
+.delete-cake-section h4 {
+    margin: 10px 0 !important;
+}
+
+.delete-cake-section form input[type="submit"]{
+    display: block;
+    margin-top: 10px;
+}
+
+.cake-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid dodgerblue;
+    border-radius: 15px;
+    padding: 10px;
+}
+img {
+    object-fit: contain;
+    width: 100%;
+}
+.cake-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+p{
+    margin: 5px;
+}
+.select-cake-form input[type="submit"] {
+    display: block;
+}
+
+.add-cake-page {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0deg, #3555df, #79c9fd 90%);
+    height: 100vh;
+}
+
+.add-cake-page .add-cake-card {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    height: fit-content;
+    margin-top: 100px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -10px #000;
+}
+
+.add-cake-page .add-cake-card h2 {
+    font-size: 24px !important;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.add-cake-page .add-cake-card form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 40px;
+}
+
+.add-cake-page .add-cake-card form input {
+    flex-grow: 1;
+    height: 32px;
+    font-size: 16px;
+}
+
+.add-cake-page .add-cake-card form input[type='text'],
+.add-cake-page .add-cake-card form input[type='number'] {
+    padding: 0 10px;
 }

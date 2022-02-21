@@ -9,21 +9,30 @@
 <body>
 
 <header>
-    <nav>
-        <a href="/">Главная</a>
-        <a href="/registration">Регистрация</a>
+    <nav class="navbar">
+        <a class="navbar_part" href="/">Главная</a>
+        <a class="navbar_part" href="/registration">Регистрация</a>
     </nav>
 </header>
 
 <main>
     <section>
-        <h2>Торты</h2>
-        <!-- 1. ВЫВЕСТИ НАЗВАНИЕ КАЖДОЙ ГОРЫ -->
-        <?php foreach ($cakes as $cake): ?>
-            <p><?= $cake['title'] ?></p>
+        <h2>Торты в наличии:</h2>
+        <div class="cake-list">
+        <?php foreach ($cakes as $item):?>
+            <div class="cake-card flex-row">
+                <h3> <? echo $item['title'] ?> </h3>
+                <p>Начинка: <?= $item['filling'] ?></p>
+                <p>Вес: <?= $item['weight'] ?> кг</p>
+                <p>Цена: <?php echo $item['price'] ?> р.</p>
+
+                <img height="300" src="img/<?= $item['pic'] ?>" alt="<?= $item['title'] ?>">
+            </div>
         <?php endforeach; ?>
+        </div>
     </section>
-    <section>
+    <section class="select-cake-form">
+        <p>Выберите понравившиеся торты</p>
         <form name="allCakes" method="post" action="/cakeList">
             <?php foreach ($cakes as $item):?>
                 <label>
@@ -31,22 +40,10 @@
                     <span><?= $item['title'] ?></span>
                 </label>
             <?php endforeach; ?>
-            <input type="submit" value="get">
+            <input type="submit" value="Посмотреть">
         </form>
     </section>
-    <section>
-        <h2>Новые группы</h2>
-        <?php foreach ($cakes as $item):?>
-            <div class="item">
-                <h3> <? echo $item['title'] ?> </h3>
-                <p>Начинка: <?= $item['filling'] ?></p>
-                <p>Вес: <?= $item['weight'] ?> кг</p>
-                <p>Цена: <?php echo $item['price'] ?> р.</p>
-                <p><?=$item['pic']?></p>
-                <img height="300" src="img/<?= $item['pic'] ?>" alt="<?= $item['title'] ?>">
-            </div>
-        <?php endforeach; ?>
-    </section>
+
 
 
 </main>

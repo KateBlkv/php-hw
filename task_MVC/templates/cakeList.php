@@ -19,9 +19,21 @@
 </header>
 
 <main>
-    <section>
+    <section class="delete-cake-section">
+        <h4>Выберите торты, чтобы удалить</h4>
+        <form name="allCakes" method="post" action="/delete">
+            <?php foreach ($selectedCakes as $item):?>
+                <label>
+                    <input type="checkbox" name="cakes[]" value="<?= $item['id'] ?>">
+                    <span><?= $item['title'] ?></span>
+                </label>
+            <?php endforeach; ?>
+            <input type="submit" value="Удалить">
+        </form>
+    </section>
+    <section class="cake-list">
         <?php foreach ($selectedCakes as $item):?>
-            <div>
+            <div class="cake-card">
                 <h3> <? echo $item['title'] ?> </h3>
                 <p>Начинка: <?= $item['filling'] ?></p>
                 <p>Вес: <?= $item['weight'] ?> кг</p>
@@ -30,17 +42,6 @@
                 <img height="300" src="img/<?= $item['pic'] ?>" alt="<?= $item['title'] ?>">
             </div>
         <?php endforeach; ?>
-    </section>
-    <section>
-        <form name="allCakes" method="post" action="/delete">
-            <?php foreach ($selectedCakes as $item):?>
-                <label>
-                    <input type="checkbox" name="cakes[]" value="<?= $item['id'] ?>">
-                    <span><?= $item['title'] ?></span>
-                </label>
-            <?php endforeach; ?>
-            <input type="submit" value="DELETE">
-        </form>
     </section>
 
 
